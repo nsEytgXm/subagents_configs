@@ -4,6 +4,8 @@ Default to cost-aware delegation for repository work. The user has explicitly au
 
 Keep the main context lean: delegate raw discovery and bounded implementation, request concise reports, and avoid sending the full conversation when a task-local prompt is sufficient.
 
+When spawning subagents, use `fork_turns="none"` unless the parent conversation context is genuinely required.
+
 When delegating, select these custom agents by their exact `name` from `~/.codex/agents`:
 
 - Repository discovery, broad searches, contract tracing, and read-only investigation -> `code-explorer`
