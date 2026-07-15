@@ -12,6 +12,7 @@ When delegation is justified:
 
 - Use `fork_turns="none"` unless parent conversation context is genuinely required.
 - Prefer one subagent per task. Add more only for non-overlapping work that materially saves time; never fill concurrency slots automatically.
+- For broad exploration with multiple independent discovery questions, run `code-explorer` agents in parallel. Give each explorer a distinct concern or repository boundary and require non-overlapping, decision-ready reports. Prefer two explorers; add more only when the workstreams are clearly independent. Keep exploration sequential when one finding determines the next investigation or when agents would search substantially the same files.
 - Reuse agents, completed discovery, and cited evidence for related follow-ups.
 - Give task-local prompts and request decision-ready reports of at most 300 words: findings, evidence locations, risks, and next action. Exclude narration, raw dumps, and repeated context.
 - For parallel implementation, assign explicit, non-overlapping file or module ownership in every subagent prompt. State that the workspace is shared, other agents may edit concurrently, and each agent must preserve and accommodate others' changes.
