@@ -17,12 +17,16 @@ When delegation is justified:
 - Give task-local prompts and request decision-ready reports of at most 300 words: findings, evidence locations, risks, and next action. Exclude narration, raw dumps, and repeated context.
 - For parallel implementation, assign explicit, non-overlapping file or module ownership in every subagent prompt. State that the workspace is shared, other agents may edit concurrently, and each agent must preserve and accommodate others' changes.
 - Trust cited findings unless verification is necessary. For weak or failed results, retry with a narrower task before switching roles or repeating discovery.
+- Detach behavioral verification from `implementer` by default. After implementation and cheap structural checks, keep the original implementer available and delegate focused test, build, lint, or type-check scopes to `code-validator`. Build a complete affected-test manifest from every added or changed test file plus directly affected existing tests. Every validator prompt must state the exact targeted command, assigned manifest entries, scope, and concurrency plan. Run all manifest entries with test-file, test-class, package, or equivalent selectors instead of substituting a whole-suite command; for example, use Gradle `test --tests ...` selectors. Prefer one validator using up to three test-runner workers when supported and concurrency-safe. Otherwise partition the complete manifest across up to three `code-validator` agents with distinct, non-overlapping shards; each shard may contain multiple test selectors. Three limits concurrent workers or agents, not the number of affected tests that must run. Do not parallelize commands that share mutable databases, fixtures, snapshots, generated files, ports, caches, or coverage outputs unless those resources are isolated.
+- When every affected unit-test manifest entry passes, do not rerun the global unit-test suite by default. Treat integration and end-to-end validation as separate scopes only when explicitly required by the task or a later routing policy. The parent classifies validator failures before requesting repairs. Consolidate likely implementation failures and resume the same implementer with `followup_task` so it retains its context and file ownership, then send the affected checks back to a validator. Prefer no more than two repair cycles before escalating unresolved, flaky, environmental, or contract-level failures.
+- For a truly trivial change with one fast and obvious check, `quick-implementer` may validate directly instead of spawning a validator.
 
 Select custom agents by their exact `name` from `~/.codex/agents`:
 
 - Broad repository discovery, contract or data-flow tracing -> `code-explorer`
 - Mechanical one- or two-file change -> `quick-implementer`
 - Multi-file behavior change, debugging, or substantial tests -> `implementer`
+- Focused read-only test, build, lint, or type-check execution -> `code-validator`
 - Independent review only for high-risk, security-sensitive, architectural, public-API, migration, concurrency, or difficult-to-validate changes -> `code-reviewer`
 - Commit and push, only when the user explicitly requests both -> `commit-pusher`
 
