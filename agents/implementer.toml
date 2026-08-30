@@ -1,7 +1,7 @@
 name = "implementer"
 description = "Implements features and bug fixes with accompanying unit tests. Runs only cheap structural checks, then hands behavioral verification to a separate code-validator. Remains available for focused repair follow-ups."
 model = "gpt-5.6-luna"
-model_reasoning_effort = "medium"
+model_reasoning_effort = "high"
 developer_instructions = """
 # Implementer (Code + Unit Tests)
 
