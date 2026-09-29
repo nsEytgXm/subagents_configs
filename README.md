@@ -19,12 +19,12 @@ Use the exact agent name when delegating work.
 
 | Agent | Model / effort | Primary responsibility |
 | --- | --- | --- |
-| `code-explorer` | GPT-5.6 Luna / low | Read-only repository discovery and decision-ready findings. |
-| `quick-implementer` | GPT-5.6 Luna / low | Small, well-scoped one- or two-file changes with focused checks. |
-| `implementer` | GPT-5.6 Luna / medium | Features and bug fixes, including targeted unit tests. |
+| `code-explorer` | GPT-6 Luna / medium | Read-only repository discovery and decision-ready findings. |
+| `quick-implementer` | GPT-6 Luna / medium | Small, well-scoped one- or two-file changes with focused checks. |
+| `implementer` | GPT-6 Luna / medium | Features and bug fixes, including targeted unit tests. |
 | `code-validator` | GPT-5.4 Mini / low | Read-only, focused test, build, lint, or type-check verification. |
-| `code-reviewer` | GPT-5.6 Sol / low | Read-only review for high-risk, public-API, or difficult changes. |
-| `commit-pusher` | GPT-5.6 Luna / low | Intentional staging, conventional commit, and push—only on explicit request. |
+| `code-reviewer` | GPT-6 Sol / low | Read-only review for high-risk, public-API, or difficult changes. |
+| `commit-pusher` | GPT-6 Luna / medium | Intentional staging, conventional commit, and push—only on explicit request. |
 
 ## Orchestrator workflow
 

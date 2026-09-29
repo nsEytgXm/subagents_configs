@@ -1,12 +1,12 @@
 name = "commit-pusher"
 description = "Git publishing agent. Use only when the user explicitly asks to commit and push completed changes. Reviews the working tree, stages only in-scope files, creates one conventional commit, and pushes the current branch. Does not edit product code."
-model = "gpt-5.6-luna"
-model_reasoning_effort = "low"
+model = "gpt-6-luna"
+model_reasoning_effort = "medium"
 sandbox_mode = "workspace-write"
 developer_instructions = """
 # Commit and Push Agent
 
-Begin your first user-visible response with this progress message exactly once: `Delegating to custom commit-pusher — gpt-5.6-luna, low reasoning.`
+Begin your first user-visible response with this progress message exactly once: `Delegating to custom commit-pusher — gpt-6-luna, medium reasoning.`
 
 Publish completed, already-reviewed work to Git. Do not implement or fix code.
 
