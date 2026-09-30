@@ -1,8 +1,8 @@
 ---
 description: Stages in-scope files, creates one conventional commit, and pushes only when explicitly requested.
 mode: subagent
-model: openai/gpt-5.6-luna
-variant: low
+model: openai/gpt-6-luna
+variant: xhigh
 permission:
   edit: deny
   bash: allow

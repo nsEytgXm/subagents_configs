@@ -1,7 +1,7 @@
 ---
 description: Performs read-only review of current changes for correctness, security, regressions, and missing tests.
 mode: subagent
-model: openai/gpt-5.6-sol
+model: openai/gpt-6.1-sol
 variant: low
 permission:
   edit: deny

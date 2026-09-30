@@ -1,8 +1,8 @@
 ---
 description: Implements small, explicit, low-risk changes limited to one or two files with narrow validation.
 mode: subagent
-model: openai/gpt-5.6-luna
-variant: low
+model: openai/gpt-6-luna
+variant: xhigh
 permission:
   edit: allow
   bash: allow

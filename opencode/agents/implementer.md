@@ -1,8 +1,8 @@
 ---
 description: Implements multi-file features and bug fixes with focused unit tests and a validation handoff.
 mode: subagent
-model: openai/gpt-5.6-luna
-variant: medium
+model: openai/gpt-6-luna
+variant: xhigh
 permission:
   edit: allow
   bash: allow

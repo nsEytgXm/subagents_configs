@@ -1,8 +1,8 @@
 ---
 description: Read-only repository scout for broad discovery, contract tracing, and decision-ready findings.
 mode: subagent
-model: openai/gpt-5.6-luna
-variant: low
+model: openai/gpt-6-luna
+variant: xhigh
 permission:
   edit: deny
 ---
